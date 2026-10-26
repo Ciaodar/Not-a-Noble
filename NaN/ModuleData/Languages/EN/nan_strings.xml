@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="English" />
+  </tags>
+  <strings>
+    <string id="nan_freebooter_title" text="Path to a Freebooter" />
+    <string id="nan_freebooter_init_log" text="To prove yourself as a Freebooter, you must complete the quests of 5 different villages and reach a total relation of {REQUIRED_RELATION}+ with the villagers." />
+    <string id="nan_freebooter_task_villages" text="Completed Different Village Quests" />
+    <string id="nan_freebooter_task_relation" text="Total Relation with Villagers" />
+    <string id="nan_freebooter_log" text="You have completed a quest for {VILLAGE_NAME}. ({CURRENT}/5)" />
+    <string id="nan_freebooter_relation_log" text="Your renown grows among the common folk. Total notable relation: {RELATION}/{REQUIRED}" />
+
+    <string id="nan_bannerlord_title" text="Path to a Bannerman" />
+    <string id="nan_bannerlord_init_log" text="To ascend to nobility as a Bannerman, you must persuade {REQUIRED_PERSUASIONS} different lords to recognize you as a noble." />
+    <string id="nan_bannerlord_task" text="Persuaded Lords" />
+    <string id="nan_bannerlord_log" text="{LORD_NAME} has acknowledged your nobility. ({CURRENT}/{REQUIRED})" />
+
+    <string id="nan_chieftain_title" text="Path to a Chieftain" />
+    <string id="nan_chieftain_init_log" text="You must defeat and capture {REQUIRED_CAPTURES} different lords on the battlefield. You must also release {REQUIRED_RELEASES} high-ranking noble in exchange for their recognition of your nobility." />
+    <string id="nan_chieftain_task_capture" text="Captured Lords" />
+    <string id="nan_chieftain_task_release" text="Released Nobles" />
+    <string id="nan_chieftain_capture_log" text="You have defeated and captured {LORD_NAME}. ({CURRENT}/{REQUIRED})" />
+    <string id="nan_chieftain_release_log" text="You released a noble and gained their recognition. Points: {CURRENT}/{TARGET}" />
+
+    <string id="nan_count_title" text="Path to a Count" />
+    <string id="nan_count_init_log" text="To prove yourself as a Count, you must either conquer a castle or successfully defend your own castle against a siege." />
+    <string id="nan_count_task" text="Conquered or Defended Castle" />
+    <string id="nan_count_capture_log" text="You have raised your banners over a conquered castle. Your might is undeniable." />
+    <string id="nan_count_defend_log" text="The castle walls held strong under your command. You have proven yourself a capable defender of the realm." />
+
+    <string id="nan_duke_title" text="Path to a Duke" />
+    <string id="nan_duke_init_log" text="To declare your might as a Duke across the realm, you must capture the sovereign of 2 different kingdoms in battle." />
+    <string id="nan_duke_task" text="Captured Sovereigns" />
+    <string id="nan_duke_log" text="The sovereign {RULER_NAME} of {KINGDOM_NAME} now kneels before you. The realm trembles. ({CURRENT}/2)" />
+
+    <string id="nan_sovereign_title" text="Path to a Sovereign" />
+    <string id="nan_sovereign_init_log" text="To be crowned as the High Emperor (Sovereign) of Calradia, you must forge a kingdom holding at least {REQUIRED_TOWNS} great towns and {REQUIRED_CASTLES} castles." />
+    <string id="nan_sovereign_task_town" text="Owned Towns" />
+    <string id="nan_sovereign_task_castle" text="Owned Castles" />
+    <string id="nan_sovereign_log" text="From peasant to Emperor, you have forged a mighty kingdom with {REQUIRED_TOWNS} great towns and {REQUIRED_CASTLES} unyielding castles. All of Calradia will know your name!" />
+
+    <string id="nan_lord_refusal" text="I don't speak with peasants. Watch your tone, or I'll have to put you in your place." />
+    <string id="nan_lord_refusal_leave" text="As you wish." />
+
+    <string id="nan_bannerlord_ask" text="My {?CONVERSATION_NPC.GENDER}Lady{?}Lord{\?}, I believe I have proven myself. I ask that you recognize me and my clan as Nobility." />
+    <string id="nan_bannerlord_cooldown" text="I advise you not to anger me. We do not consider every vagabond a noble. Leave me be!" />
+    <string id="nan_bannerlord_start" text="Very well. Tell me, what makes you worthy of this honor?" />
+    <string id="nan_persuasion_1" text="My {?CONVERSATION_NPC.GENDER}Lady{?}Lord{\?}, my name is spoken with reverence in the surrounding villages. The breath of the people is my breath." />
+    <string id="nan_persuasion_2" text="For me, both gold and word have a standard. The reputation of an honest merchant crosses borders." />
+    <string id="nan_persuasion_3" text="When my name is heard on the battlefields, hearts find courage. My brothers-in-arms would walk blindly to their deaths for me." />
+    <string id="nan_persuasion_4" text="War is a board, and I always play my pieces for victory. No trap surprises me." />
+    <string id="nan_persuasion_5" text="The land belongs not only to the one who sows it, but to the one who protects it. An order where justice reigns is my doing." />
+    <string id="nan_persuasion_6" text="I do not hesitate to walk in the shadows and dirty my hands when necessary. I even have a place in the nightmares of my enemies." />
+    <string id="nan_persuasion_7" text="The one who will bend my wrist in a one-on-one fight has not yet been born. The art of war is my purest nature." />
+    <string id="nan_persuasion_8" text="I always know a way to overcome the supposedly indestructible walls and shatter the impenetrable armor. Intellect is always superior to brute force." />
+    <string id="nan_persuasion_9" text="Mercy is the greatest power. When my warriors are wounded, their hope is my healing hands." />
+    
+    <string id="nan_bannerlord_total_success" text="I suppose you're right. You have proven your worth. You are a noble of Calradia now." />
+    <string id="nan_bannerlord_total_fail" text="This is nonsense. Do not waste my time with this again." />
+    <string id="nan_bannerlord_reaction_success" text="Fair point. You may really be eligible." />
+    <string id="nan_bannerlord_reaction_fail" text="I don't think so. Not noble manners at all." />
+    <string id="nan_bannerlord_continue" text="Continue." />
+    <string id="nan_bannerlord_round_continue" text="Is that all? Keep on. I'm still considering." />
+
+    <string id="nan_chieftain_offer" text="I will release you on one condition. Recognize me and my clan as a Chieftain, and you will have your freedom." />
+    <string id="nan_chieftain_accept" text="At least I won't have been captured by a lower-class peasant. I accept." />
+    <string id="nan_chieftain_accept_player" text="Send word to your clan. When they declare they recognize me, you will be released." />
+    <string id="nan_chieftain_accept_end" text="I am at your mercy, my {?PLAYER.GENDER}lady{?}lord{\?}!" />
+    <string id="nan_chieftain_refuse" text="You will die before you ever become a Chieftain. Eventually, I will hold your head in my hands. Get lost, you lower-class scum!" />
+    <string id="nan_chieftain_refuse_player" text="I remind you that you are at my mercy. Tell your clan to prepare a generous ransom." />
+    <string id="nan_chieftain_refuse_end" text="I will kill you, you will die!" />
+
+    <string id="nan_renown_locked" text="You cannot gain more renown! Check the Quests tab to see how to ascend to {TIER_NAME}." />
+    <string id="nan_peasant_greeting" text="Why are you taking my precious time, peasant?! I hope its important." />
+    <string id="nan_peasant_reject_diplomacy" text="There's no way, I'm planning to discuss something with a filthy peasant. Know your place!" />
+    <string id="nan_peasant_reject_issue" text="I have no intention of giving this task to a peasant of unknown origin." />
+    <string id="nan_peasant_intro" text="My men also does not recognize you or your clans name. Which means that you are not even a Bannerman." />
+    <string id="nan_peasant_demand" text="Demands...? Are you okay? You must've hit your head somewhere. A peasant demands something from me, eh?" />
+    <string id="nan_peasant_pretalk" text="I hope thats all. I'm not willing to spend one more second with a peasant after all!" />
+    <string id="nan_peasant_leave" text="Yes, off with you. Frankly, you should have vanished from my sight long before this." />
+
+    <!-- Chieftain & Persuasion Extended Strings -->
+    <string id="nan_chieftain_eval" text="You dare bargain with me? Let's hear what you have to say." />
+    <string id="nan_chieftain_round_continue" text="I'm still listening. Go on." />
+    <string id="nan_chief_p1_hard" text="I could execute you right now. Instead, I offer life. A wise lord knows the value of my mercy." />
+    <string id="nan_chief_p1_n1" text="Think of your clan. An alliance with me is more profitable than dying in a dungeon." />
+    <string id="nan_chief_p1_n2" text="Honor dictates that a life spared must be repaid with respect." />
+    <string id="nan_chief_p2_hard" text="Release means we are equals. Tell your kin that I am a chieftain worthy of their respect." />
+    <string id="nan_chief_p2_n1" text="Don't let foolish pride blind you. A rational lord recognizes a new power when he sees it." />
+    <string id="nan_chief_p2_n2" text="I have your life in the palm of my hand. Validate me, and you keep it." />
+    <string id="nan_chief_react_success" text="You make a fair point. Proceed." />
+    <string id="nan_chief_react_fail" text="I am not convinced by such words." />
+    <string id="nan_persuasion_p1_hard" text="I have bled on the field, calculated every maneuver, and kept my honor intact. A true lord respects these above all." />
+    <string id="nan_persuasion_p1_n1" text="For me, both gold and word have a standard. The reputation of an honest merchant crosses borders." />
+    <string id="nan_persuasion_p1_n2" text="My word is my bond. My name is spoken with reverence in the surrounding villages." />
+    <string id="nan_persuasion_p2_hard" text="A true ruler protects the weak, feeds the hungry, and keeps his oaths. This is what makes me worthy." />
+    <string id="nan_persuasion_p2_n1" text="The one who will bend my wrist in a fair fight has not yet been born." />
+    <string id="nan_persuasion_p2_n2" text="War is a board, and I always play my pieces for victory. No trap surprises me." />
+    <string id="nan_persuasion_p3_hard" text="I bring courage to the line, wisdom to the council, and spoils to my followers. What else does nobility require?" />
+    <string id="nan_persuasion_p3_n1" text="The land belongs not only to the one who sows it, but to the one who protects it." />
+    <string id="nan_persuasion_p3_n2" text="I do not hesitate to walk in the shadows and dirty my hands when necessary. I am my enemy's nightmare." />
+    <string id="nan_quest_title_fallback" text="Ascension Quest" />
+    <string id="nan_ascension_success" text="Your clan has been recognized and ascended to the next tier!" />
+    <string id="nan_chieftain_hint_relation" text="Perhaps you should try this offer on prisoners with whom you have a better relationship (Relation &gt;= 7)." />
+  </strings>
+</base>

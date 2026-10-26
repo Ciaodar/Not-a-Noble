@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="string">
+  <tags>
+    <tag language="Türkçe" />
+  </tags>
+  <strings>
+    <string id="nan_freebooter_title" text="Freebooter Yolu" />
+    <string id="nan_freebooter_init_log" text="Bir Freebooter olduğunu kanıtlamak için 5 farklı köyün görevini tamamlamalı ve köylülerle toplamda 30+ ilişki seviyesine ulaşmalısın." />
+    <string id="nan_freebooter_task_villages" text="Tamamlanan Farklı Köy Görevleri" />
+    <string id="nan_freebooter_task_relation" text="Köylülerle Toplam İlişki (Relation)" />
+    <string id="nan_freebooter_log" text="{VILLAGE_NAME} için bir görevi tamamladın. ({CURRENT}/5)" />
+    <string id="nan_freebooter_relation_log" text="Halk arasındaki namın yayılıyor. Eşrafla olan toplam ilişkin: {RELATION}/30" />
+
+    <string id="nan_bannerlord_title" text="Bannerman Yolu" />
+    <string id="nan_bannerlord_init_log" text="Bir Bannerman olarak asalete adım atmak için {REQUIRED_PERSUASIONS} farklı lordu seni soylu olarak kabul etmeye ikna etmelisin." />
+    <string id="nan_bannerlord_task" text="İkna Edilen Lordlar" />
+    <string id="nan_bannerlord_log" text="{LORD_NAME} senin asaletini tanıdı. ({CURRENT}/{REQUIRED})" />
+
+    <string id="nan_chieftain_title" text="Chieftain Yolu" />
+    <string id="nan_chieftain_init_log" text="Savaş meydanlarında {REQUIRED_CAPTURES} farklı lordu mağlup edip esir almalısın. Ayrıca asaletini tanıması karşılığında {REQUIRED_RELEASES} yüksek rütbeli lordu serbest bırakmalısın." />
+    <string id="nan_chieftain_task_capture" text="Esir Alınan Lordlar" />
+    <string id="nan_chieftain_task_release" text="Serbest Bırakılan Asiller" />
+    <string id="nan_chieftain_capture_log" text="{LORD_NAME} adındaki asili yenip esir aldın. ({CURRENT}/{REQUIRED})" />
+    <string id="nan_chieftain_release_log" text="Bir soyluyu asaletini tanıması karşılığında serbest bıraktın. Puan: {CURRENT}/{TARGET}" />
+
+    <string id="nan_count_title" text="Count Yolu" />
+    <string id="nan_count_init_log" text="Kendini bir Count olarak kanıtlamak için ya bir kaleyi fethetmeli ya da kendi kaleni bir kuşatmaya karşı başarıyla savunmalısın." />
+    <string id="nan_count_task" text="Fethedilen veya Savunulan Kale" />
+    <string id="nan_count_capture_log" text="Fethettiğin bir kaleye sancağını çektin. Gücün inkar edilemez." />
+    <string id="nan_count_defend_log" text="Kale surları komutanlığında ayakta kaldı. Kendini yetenekli bir savunucu olarak kanıtladın." />
+
+    <string id="nan_duke_title" text="Duke Yolu" />
+    <string id="nan_duke_init_log" text="Kudretini bir Duke olarak diyarın dört bir yanına duyurmak için 2 farklı krallığın hükümdarını (Sovereign) savaşta esir almalısın." />
+    <string id="nan_duke_task" text="Esir Alınan Hükümdarlar" />
+    <string id="nan_duke_log" text="{KINGDOM_NAME} hükümdarı {RULER_NAME} önünde diz çöküyor. Diyar titriyor. ({CURRENT}/2)" />
+
+    <string id="nan_sovereign_title" text="Sovereign Yolu" />
+    <string id="nan_sovereign_init_log" text="Kalradya'nın Yüce İmparatoru (Sovereign) olarak taç giymek için en az 3 büyük şehir ve 5 kaleyi elinde bulunduran bir krallık kurmalısın." />
+    <string id="nan_sovereign_task_town" text="Sahip Olunan Şehirler" />
+    <string id="nan_sovereign_task_castle" text="Sahip Olunan Kaleler" />
+    <string id="nan_sovereign_log" text="Basit bir köylüden bir İmparatora! 3 büyük şehir ve 5 yıkılmaz kale ile kudretli bir krallık kurdun. Bütün Kalradya adını bilecek!" />
+
+    <string id="nan_lord_refusal" text="Basit köylülerle konuşmam. Ses tonuna dikkat et yoksa haddini bildirmek zorunda kalırım." />
+    <string id="nan_lord_refusal_leave" text="Nasıl isterseniz." />
+
+    <string id="nan_bannerlord_ask" text="{?CONVERSATION_NPC.GENDER}Leydim{?}Lordum{\?}, kendimi kanıtladığımı düşünüyorum. Beni ve klanımı Asilzade olarak tanımanızı isterim." />
+    <string id="nan_bannerlord_cooldown" text="Beni kızdırmamanı tavsiye ederim. Her boşgezeni soylu sayacak değiliz. Beni biraz rahat bırak!" />
+    <string id="nan_bannerlord_start" text="Pekala, seni bu onura layık kılan ne olabilir anlat bakalım." />
+    <string id="nan_persuasion_1" text="{?CONVERSATION_NPC.GENDER}Leydim{?}Lordum{\?}, civar köylerde adım hürmetle anılır. Halkın nefesi benim nefesimdir." />
+    <string id="nan_persuasion_2" text="Benim için altının da, sözün de bir ayarı vardır. Dürüst bir tüccarın namı sınırları aşar." />
+    <string id="nan_persuasion_3" text="Savaş meydanlarında adım duyulduğunda yürekler cesaret bulur. Kılıç arkadaşlarım benim için ölüme gözü kapalı yürür." />
+    <string id="nan_persuasion_4" text="Savaş bir oyun tahtasıdır ve ben taşlarımı her zaman zafere oynarım. Hiçbir tuzak bana sürpriz olmaz." />
+    <string id="nan_persuasion_5" text="Toprak sadece ekenin değil, onu koruyanındır. Adaletin hüküm sürdüğü bir düzen benim eserimdir." />
+    <string id="nan_persuasion_6" text="Gerektiğinde gölgelerde gezinmekten ve ellerimi kirletmekten çekinmem. Düşmanlarımın kabuslarında bile yer edinirim." />
+    <string id="nan_persuasion_7" text="Birebir çarpışmada bileğimi bükecek kişi henüz doğmadı. Savaş sanatı benim en saf doğamdır." />
+    <string id="nan_persuasion_8" text="Yıkılmaz denen surları aşmanın, delinmez denen zırhları parçalamanın bir yolunu mutlaka bilirim. Zeka kaba kuvvetten daima üstündür." />
+    <string id="nan_persuasion_9" text="Merhamet en büyük güçtür. Benim savaşçılarım yara aldığında, onların umudu benim şifa veren ellerimdir." />
+    
+    <string id="nan_bannerlord_total_success" text="Pekala, klanımla konuşup seni onaylamalarını isteyeceğim." />
+    <string id="nan_bannerlord_total_fail" text="Malesef, seni bu konuda destekleyemeyeceğim. Soylu olmaya layık olduğunu düşünmüyorum." />
+    <string id="nan_bannerlord_reaction_success" text="Anlıyorum. Gerçekten hak ediyor olabilirsin." />
+    <string id="nan_bannerlord_reaction_fail" text="Hiç sanmıyorum. Hiç asil tavırlar değil." />
+    <string id="nan_bannerlord_continue" text="Devam et." />
+    <string id="nan_bannerlord_round_continue" text="Devam et, henüz emin olamadım." />
+
+    <string id="nan_chieftain_offer" text="Seni bir şartla salıvereceğim, Beni ve klanımı Chieftain olarak kabul et ve özgürlüğüne kavuş." />
+    <string id="nan_chieftain_accept" text="En azından alt sınıf biri tarafından esir alınmamış olacağım. Kabul ediyorum." />
+    <string id="nan_chieftain_accept_player" text="Klanına haber gönder. Beni tanıdıklarını ilan ettiklerinde salınacaksın." />
+    <string id="nan_chieftain_accept_end" text="Merhametinizdeyim, {?PLAYER.GENDER}leydim{?}lordum{\?}!" />
+    <string id="nan_chieftain_refuse" text="Sen bir Chieftain olamadan geberip gideceksin. Eninde sonunda kelleni elime alacağım. Kaybol, alt sınıf pislik!" />
+    <string id="nan_chieftain_refuse_player" text="Merhametimde bulunduğunu hatırlatırım. klanına söyle fidyeyi cömertçe hazırlasınlar." />
+    <string id="nan_chieftain_refuse_end" text="Seni öldüreceğim, öleceksin!" />
+
+    <string id="nan_renown_locked" text="Daha fazla nam kazanamazsın! {TIER_NAME} rütbesine nasıl yükseleceğini görmek için Görevler sekmesini kontrol et." />
+    <string id="nan_peasant_greeting" text="Neden vaktimi çalıyorsun, köylü?! Umarım önemli bir şeydir." />
+    <string id="nan_peasant_reject_diplomacy" text="Senin gibi sefil bir köylüyle tartışacak hiçbir meselem olamaz. Haddini bil!" />
+    <string id="nan_peasant_reject_issue" text="Sana görev falan verecek değilim, nereden geldiği belli olmayan bir köylüsün." />
+    <string id="nan_peasant_intro" text="Adamlarım seni ya da klanını tanımıyor. Görünüşe bakılırsa daha Bannerman bile olamamışsın." />
+    <string id="nan_peasant_demand" text="Talep mi...? Kafana bir darbe falan mı aldın? Bir köylü benden bir şey talep edecek, öyle mi?" />
+    <string id="nan_peasant_pretalk" text="Umarım söyleyeceklerin bitmiştir. Zira senin gibi bir köylüyle bir saniye daha harcamak istemiyorum!" />
+    <string id="nan_peasant_leave" text="Evet, çekil git. Açıkçası, çoktan gözümün önünden kaybolmalıydın." />
+
+    <!-- Chieftain & Persuasion Extended Strings -->
+    <string id="nan_chieftain_eval" text="Benimle pazarlık etmeye cüret mi ediyorsun? Söyleyeceklerini dinleyelim bakalım." />
+    <string id="nan_chieftain_round_continue" text="Hala dinliyorum. Devam et." />
+    <string id="nan_chief_p1_hard" text="Seni şu anda idam ettirebilirim. Bunun yerine sana yaşam sunuyorum. Akıllı bir lord merhametimin değerini bilir." />
+    <string id="nan_chief_p1_n1" text="Klanını düşün. Benimle yapılacak bir ittifak, bir zindanda çürüyüp ölmekten çok daha karlıdır." />
+    <string id="nan_chief_p1_n2" text="Onur, bağışlanan bir hayatın saygıyla ödenmesini emreder." />
+    <string id="nan_chief_p2_hard" text="Serbest bırakılman eşit olduğumuz anlamına gelir. Soyuna, saygılarına layık bir reis olduğumu söyle." />
+    <string id="nan_chief_p2_n1" text="Aptalca bir gururun gözünü kör etmesine izin verme. Akılcı bir lord, yeni bir gücü gördüğünde onu tanır." />
+    <string id="nan_chief_p2_n2" text="Hayatın avucumun içinde. Asaletimi onayla ki canını bağışlayayım." />
+    <string id="nan_chief_react_success" text="Haklı bir noktaya değindin. Devam et." />
+    <string id="nan_chief_react_fail" text="Bu tür sözlerle ikna olmam." />
+    <string id="nan_persuasion_p1_hard" text="Savaş meydanında kan döktüm, her hamleyi hesapladım ve onurumu lekelemedim. Gerçek bir lord her şeyden önce bunlara saygı duyar." />
+    <string id="nan_persuasion_p1_n1" text="Benim için altının da, sözün de bir ayarı vardır. Dürüst bir tüccarın namı sınırları aşar." />
+    <string id="nan_persuasion_p1_n2" text="Sözüm senettir. Civar köylerde adım hürmetle anılır." />
+    <string id="nan_persuasion_p2_hard" text="Gerçek bir hükümdar zayıfı korur, açları doyurur ve yeminlerine sadık kalır. Beni bu unvana layık kılan budur." />
+    <string id="nan_persuasion_p2_n1" text="Adil bir dövüşte bileğimi bükecek kişi henüz doğmadı." />
+    <string id="nan_persuasion_p2_n2" text="Savaş bir oyun tahtasıdır ve ben taşlarımı her zaman zafere oynarım. Hiçbir tuzak bana sürpriz olmaz." />
+    <string id="nan_persuasion_p3_hard" text="Saflara cesaret, divana bilgelik, takipçilerime ganimet getiririm. Asalet daha ne gerektirir?" />
+    <string id="nan_persuasion_p3_n1" text="Toprak sadece ekenin değil, onu koruyanındır." />
+    <string id="nan_persuasion_p3_n2" text="Gerektiğinde gölgelerde gezinmekten ve ellerimi kirletmekten çekinmem. Düşmanlarımın kabusuyum." />
+    <string id="nan_quest_title_fallback" text="Yükseliş Görevi" />
+    <string id="nan_ascension_success" text="Klanın tanındı ve bir üst rütbeye yükseldi!" />
+    <string id="nan_chieftain_hint_relation" text="Belki de bu teklifi aranda daha iyi ilişki (İlişki &gt;= 7) bulunan esirlere denemelisin." />
+  </strings>
+</base>

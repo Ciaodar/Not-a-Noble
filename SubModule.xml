@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="Not-a-Noble" />
+  <Id value="NaN" />
+  <Version value="v1.2.3.1" />
+  <ModuleCategory value="Singleplayer" />
+  <ModuleType value="Community" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <DependedModules>
+    <DependedModule Id="Native" />
+    <DependedModule Id="SandBoxCore" />
+    <DependedModule Id="Sandbox" />
+    <DependedModule Id="CustomBattle" />
+    <DependedModule Id="StoryMode" />
+  </DependedModules>
+  <DependedModuleMetadatas>
+    <ModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" version="v2.2.2.162" />
+    <ModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" version="v5.9.2" optional="true" />
+  </DependedModuleMetadatas>
+  <SubModules>
+    <SubModule>
+      <Name value="NaN" />
+      <DLLName value="NaN.dll" />
+      <SubModuleClassType value="NaN.NaNSubModule" />
+      <Tags>
+        <Tag key="DedicatedServerType" value="none" />
+        <Tag key="IsNoRenderModeElement" value="false" />
+      </Tags>
+    </SubModule>
+  </SubModules>
+  <Xmls />
+</Module>
