@@ -1,59 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B1C2D3E4-F5A6-7B8C-9D0E-1F2A3B4C5D6E}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>9</LangVersion>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
     <RootNamespace>NaN.MCMBridge</RootNamespace>
     <AssemblyName>NaN.MCMBridge</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Configurations>Debug;Update;Hotfix;BigUpdate</Configurations>
+    <MSBuildEnableWorkloadResolver>false</MSBuildEnableWorkloadResolver>
     <GameFolder Condition="Exists('D:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord')">D:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</GameFolder>
-    <GameFolder Condition=" '$(GameFolder)' == '' ">C:\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord</GameFolder>
+    <GameFolder Condition="'$(GameFolder)' == '' And Exists('C:\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord')">C:\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord</GameFolder>
+    <UseLocalGameDlls>false</UseLocalGameDlls>
+    <UseLocalGameDlls Condition="'$(GITHUB_ACTIONS)' != 'true' And '$(GameFolder)' != '' And Exists('$(GameFolder)\bin\Win64_Shipping_Client\TaleWorlds.Core.dll')">true</UseLocalGameDlls>
+    <ModuleName>Not-a-Noble</ModuleName>
+    <ModuleFolder Condition="'$(UseLocalGameDlls)' == 'true'">$(GameFolder)\Modules\$(ModuleName)</ModuleFolder>
+    <ModuleFolder Condition="'$(UseLocalGameDlls)' != 'true'">$(ProjectDir)..\artifacts\$(ModuleName)</ModuleFolder>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Hotfix|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Hotfix\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Update|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Update\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'BigUpdate|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\BigUpdate\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <ProjectReference Include="..\NaN\NaN.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UseLocalGameDlls)' == 'true'">
     <Reference Include="TaleWorlds.Core">
       <HintPath>$(GameFolder)\bin\Win64_Shipping_Client\TaleWorlds.Core.dll</HintPath>
       <Private>False</Private>
@@ -62,45 +33,25 @@
       <HintPath>$(GameFolder)\bin\Win64_Shipping_Client\TaleWorlds.Library.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <!-- MCM Base References -->
     <Reference Include="MCMv5">
       <HintPath>$(GameFolder)\Modules\Bannerlord.MBOptionScreen\bin\Win64_Shipping_Client\MCMv5.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
-  <ItemGroup>
-    <ProjectReference Include="..\NaN\NaN.csproj">
-      <Project>{ab161c9c-6431-41a9-af54-a2f3b260c6cb}</Project>
-      <Name>NaN</Name>
-      <Private>False</Private>
-    </ProjectReference>
+
+  <ItemGroup Condition="'$(UseLocalGameDlls)' != 'true'">
+    <PackageReference Include="Bannerlord.ReferenceAssemblies.Core" Version="1.4.8.119303" PrivateAssets="all" IncludeAssets="compile" />
+    <PackageReference Include="Bannerlord.MCM" Version="5.13.1" PrivateAssets="all" IncludeAssets="compile" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" PrivateAssets="all" IncludeAssets="compile" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="BridgeBootstrap.cs" />
-    <Compile Include="Config\NanMcmSettings.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-
-  <!-- Pre-Build Version Update -->
-  <Target Name="UpdateVersion" BeforeTargets="PreBuildEvent">
-    <Exec Command="powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File &quot;$(ProjectDir)..\NaN\Build\UpdateVersion.ps1&quot; &quot;$(ProjectDir)Properties\AssemblyInfo.cs&quot; &quot;$(Configuration)&quot;" ContinueOnError="false" />
-  </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <PropertyGroup>
-      <ModuleFolder>$(GameFolder)\Modules\Not-a-Noble</ModuleFolder>
-    </PropertyGroup>
     <ItemGroup>
       <ModuleBin Include="$(TargetDir)NaN.MCMBridge.dll" />
     </ItemGroup>
-    
-    <Copy SourceFiles="@(ModuleBin)" DestinationFolder="$(ModuleFolder)\bin\Win64_Shipping_Client" SkipUnchangedFiles="true" />
-    
-    <!-- En son derlenen proje MCMBridge olduğu için Desktop'a Zip çıktısını burada alıyoruz -->
-    <Exec Command="powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -Command &quot;$desktop = [Environment]::GetFolderPath('Desktop'); $zipPath = Join-Path $desktop 'Not-a-Noble.zip'; if (Test-Path $zipPath) { Remove-Item $zipPath -Force }; Compress-Archive -Path '$(ModuleFolder)' -DestinationPath $zipPath -Force&quot;" />
+    <Copy SourceFiles="@(ModuleBin)" DestinationFolder="$(ModuleFolder)\bin\Win64_Shipping_Client" />
+    <Copy SourceFiles="@(ModuleBin)" DestinationFolder="$(ModuleFolder)\bin\Gaming.Desktop.x64_Shipping_Client" />
+    <Exec Condition="'$(UseLocalGameDlls)' == 'true'" Command="powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -Command &quot;$desktop = [Environment]::GetFolderPath('Desktop'); $zipPath = Join-Path $desktop 'Not-a-Noble.zip'; if (Test-Path $zipPath) { Remove-Item $zipPath -Force }; Compress-Archive -Path '$(ModuleFolder)' -DestinationPath $zipPath -Force&quot;" />
   </Target>
+
 </Project>

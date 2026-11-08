@@ -7,22 +7,24 @@ namespace NaN.MCMBridge
 {
     public static class BridgeBootstrap
     {
+        private static NanMcmSettings? _subscribedInstance;
+
         public static void TryRegister()
         {
             try
             {
-                NanSettingsManager.RegisterExternalSettingsProvider(() =>
-                {
-                    if (NanMcmSettings.Instance != null)
-                    {
-                        return NanMcmSettings.Instance.ToJsonModel();
-                    }
-                    return null;
-                });
+                NanSettingsManager.RegisterExternalSettingsProvider(BuildModelFromMcm);
 
-                if (NanMcmSettings.Instance != null)
+                var instance = NanMcmSettings.Instance;
+                if (instance != null && !ReferenceEquals(_subscribedInstance, instance))
                 {
-                    NanMcmSettings.Instance.PropertyChanged += OnSettingsPropertyChanged;
+                    if (_subscribedInstance != null)
+                    {
+                        _subscribedInstance.PropertyChanged -= OnSettingsPropertyChanged;
+                    }
+
+                    instance.PropertyChanged += OnSettingsPropertyChanged;
+                    _subscribedInstance = instance;
                 }
             }
             catch (Exception ex)
@@ -34,6 +36,12 @@ namespace NaN.MCMBridge
         private static void OnSettingsPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             NanSettingsManager.Reload();
+        }
+
+        private static NanJsonModel BuildModelFromMcm()
+        {
+            var mcm = NanMcmSettings.Instance ?? new NanMcmSettings();
+            return mcm.ToJsonModel();
         }
     }
 }

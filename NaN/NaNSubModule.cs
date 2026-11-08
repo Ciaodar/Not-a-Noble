@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using HarmonyLib;
@@ -23,6 +24,8 @@ namespace NaN
         protected override void OnBeforeInitialModuleScreenSetAsRoot()
         {
             base.OnBeforeInitialModuleScreenSetAsRoot();
+
+            TryActivateOptionalMcmBridge();
 
             if (!_isLoaded)
             {
@@ -58,20 +61,31 @@ namespace NaN
             }
         }
 
-        private void TryActivateOptionalMcmBridge()
+        private static void TryActivateOptionalMcmBridge()
         {
             try
             {
-                var mcmAssembly = AppDomain.CurrentDomain.GetAssemblies()
-                    .FirstOrDefault(a => a.GetName().Name == "MCMv5");
+                Assembly.Load("MCMv5");
 
-                if (mcmAssembly != null)
-                {
-                    Assembly bridgeAssembly = Assembly.Load("NaN.MCMBridge");
-                    Type bridgeType = bridgeAssembly.GetType("NaN.MCMBridge.BridgeBootstrap");
-                    MethodInfo registerMethod = bridgeType?.GetMethod("TryRegister", BindingFlags.Static | BindingFlags.Public);
-                    registerMethod?.Invoke(null, null);
-                }
+                string assemblyLocation = typeof(NaNSubModule).Assembly.Location;
+                if (string.IsNullOrWhiteSpace(assemblyLocation))
+                    return;
+
+                string binDir = Path.GetDirectoryName(assemblyLocation);
+                if (string.IsNullOrWhiteSpace(binDir))
+                    return;
+
+                string bridgePath = Path.Combine(binDir, "NaN.MCMBridge.dll");
+                if (!File.Exists(bridgePath))
+                    return;
+
+                Assembly bridgeAssembly = AppDomain.CurrentDomain.GetAssemblies()
+                    .FirstOrDefault(a => string.Equals(a.GetName().Name, "NaN.MCMBridge", StringComparison.OrdinalIgnoreCase))
+                    ?? Assembly.LoadFrom(bridgePath);
+
+                Type bootstrapType = bridgeAssembly.GetType("NaN.MCMBridge.BridgeBootstrap");
+                MethodInfo tryRegister = bootstrapType?.GetMethod("TryRegister", BindingFlags.Static | BindingFlags.Public);
+                tryRegister?.Invoke(null, null);
             }
             catch (Exception ex)
             {

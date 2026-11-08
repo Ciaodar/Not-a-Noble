@@ -2,9 +2,20 @@
 <Module>
   <Name value="Not-a-Noble" />
   <Id value="NaN" />
-  <Version value="v1.2.3.1" />
+  <Version value="v1.2.4.0" />
+  <DefaultModule value="false" />
   <ModuleCategory value="Singleplayer" />
   <ModuleType value="Community" />
+  <Author value="Ciaodar" />
+  <Url value="https://www.nexusmods.com/mountandblade2bannerlord/mods/12265" />
+  <UpdateInfo value="NexusMods:12265" />
+  <ISKL>
+    <NexusId value="12265" />
+    <Author value="Ciaodar" />
+    <Description value="Ascension questline and noble rank progression for Mount &amp; Blade II: Bannerlord." />
+    <Category value="Gameplay" />
+    <Tier value="Gameplay" />
+  </ISKL>
   <SingleplayerModule value="true" />
   <MultiplayerModule value="false" />
   <DependedModules>
@@ -15,8 +26,15 @@
     <DependedModule Id="StoryMode" />
   </DependedModules>
   <DependedModuleMetadatas>
-    <ModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" version="v2.2.2.162" />
-    <ModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" version="v5.9.2" optional="true" />
+    <DependedModuleMetadata id="Native" order="LoadBeforeThis" />
+    <DependedModuleMetadata id="SandBoxCore" order="LoadBeforeThis" />
+    <DependedModuleMetadata id="Sandbox" order="LoadBeforeThis" />
+    <DependedModuleMetadata id="CustomBattle" order="LoadBeforeThis" />
+    <DependedModuleMetadata id="StoryMode" order="LoadBeforeThis" />
+    <DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" optional="true" />
+    <DependedModuleMetadata id="Bannerlord.ButterLib" order="LoadBeforeThis" optional="true" />
+    <DependedModuleMetadata id="Bannerlord.UIExtenderEx" order="LoadBeforeThis" optional="true" />
+    <DependedModuleMetadata id="Bannerlord.MBOptionScreen" order="LoadBeforeThis" optional="true" />
   </DependedModuleMetadatas>
   <SubModules>
     <SubModule>

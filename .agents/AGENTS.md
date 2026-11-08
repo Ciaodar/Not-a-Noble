@@ -24,3 +24,15 @@ If `Not-a-Noble` will feature a Mod Configuration Menu (MCM), you should decoupl
 ### 4. Build Environment
 - Mod `.csproj` files typically reference `TaleWorlds.*.dll` assemblies directly from the active Steam installation (`$(GameFolder)\bin\Win64_Shipping_Client`). 
 - When Steam auto-updates Bannerlord, your compilation environment immediately targets the new game version. Always be mindful of API breakages during automated updates.
+
+### 5. Developer Release & Build Lifecycle (Mandatory)
+Every developer and agent must strictly follow this 5-step lifecycle:
+1. **Code (Kodla)**: Make necessary changes to code or XML.
+2. **Debug Build (Debug buildi al)**: Build in `Debug` configuration (`dotnet build -c Debug`). Increments the debug version segment.
+3. **Test (Test et)**: Verify gameplay and sanity check in-game or via tests.
+4. **Hotfix / Update Build (Hotfix/Update buildi al)**:
+   - Run `dotnet build -c Hotfix` for bugfixes, or `dotnet build -c Update` for feature releases.
+   - Automatically increments the version in `SubModule.xml` (and `AssemblyInfo.cs`) via `UpdateVersion.ps1`.
+5. **Commit & Push with Changelog (Commit ve Push)**:
+   - Write action-oriented commit messages (`Added: ...`, `fix: ...`) because commit messages automatically generate the Nexus Mods changelog.
+   - Always ask for explicit user permission before `git push origin master` (or `main`).
