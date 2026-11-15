@@ -25,15 +25,15 @@ namespace NaN.MCMBridge.Config
         [SettingPropertyGroup("General")]
         public int PeasantDialogueRelationThreshold { get; set; } = 10;
 
-        [SettingPropertyInteger("Freebooter: Required Relation", 5, 100, "0", Order = 1, RequireRestart = false, HintText = "Total relation with villagers required to complete Freebooter quest.")]
+        [SettingPropertyInteger("Mercenary: Required Relation", 5, 100, "0", Order = 1, RequireRestart = false, HintText = "Total relation with villagers required to complete Mercenary quest.")]
         [SettingPropertyGroup("Quest Difficulty")]
         public int FreebooterRequiredRelation { get; set; } = 30;
 
-        [SettingPropertyInteger("Freebooter: Required Quests", 1, 10, "0", Order = 2, RequireRestart = false, HintText = "Number of different village quests you must complete.")]
+        [SettingPropertyInteger("Mercenary: Required Quests", 1, 10, "0", Order = 2, RequireRestart = false, HintText = "Number of different village quests you must complete.")]
         [SettingPropertyGroup("Quest Difficulty")]
         public int FreebooterRequiredQuests { get; set; } = 4;
 
-        [SettingPropertyDropdown("Bannerlord: Persuasion Difficulty", Order = 3, RequireRestart = false, HintText = "Base difficulty for Bannerlord persuasion checks.")]
+        [SettingPropertyDropdown("Vassal: Persuasion Difficulty", Order = 3, RequireRestart = false, HintText = "Base difficulty for Vassal persuasion checks.")]
         [SettingPropertyGroup("Quest Difficulty")]
         public MCM.Common.Dropdown<string> BannerlordPersuasionDifficultyDropdown { get; set; } = new MCM.Common.Dropdown<string>(new string[] { "Very Easy", "Easy", "Medium", "Hard", "Very Hard", "Ultra Hard" }, 3);
         
@@ -41,7 +41,7 @@ namespace NaN.MCMBridge.Config
         [SettingPropertyGroup("Quest Difficulty")]
         public MCM.Common.Dropdown<string> ChieftainPersuasionDifficultyDropdown { get; set; } = new MCM.Common.Dropdown<string>(new string[] { "Very Easy", "Easy", "Medium", "Hard", "Very Hard", "Ultra Hard" }, 3);
 
-        [SettingPropertyInteger("Bannerlord: Required Persuasions", 1, 10, "0", Order = 2, RequireRestart = false, HintText = "Number of lords you must persuade to complete Bannerlord quest.")]
+        [SettingPropertyInteger("Vassal: Required Persuasions", 1, 10, "0", Order = 2, RequireRestart = false, HintText = "Number of lords you must persuade to complete Vassal quest.")]
         [SettingPropertyGroup("Quest Difficulty")]
         public int BannerlordRequiredPersuasions { get; set; } = 3;
 
@@ -61,11 +61,11 @@ namespace NaN.MCMBridge.Config
         [SettingPropertyGroup("Quest Difficulty")]
         public int CountRequiredTowns { get; set; } = 1;
 
-        [SettingPropertyInteger("Sovereign: Required Towns", 1, 10, "0", Order = 7, RequireRestart = false, HintText = "Number of towns you must hold to complete Sovereign quest.")]
+        [SettingPropertyInteger("King: Required Towns", 1, 10, "0", Order = 7, RequireRestart = false, HintText = "Number of towns you must hold to complete King quest.")]
         [SettingPropertyGroup("Quest Difficulty")]
         public int SovereignRequiredTowns { get; set; } = 3;
 
-        [SettingPropertyInteger("Sovereign: Required Castles", 1, 20, "0", Order = 8, RequireRestart = false, HintText = "Number of castles you must hold to complete Sovereign quest.")]
+        [SettingPropertyInteger("King: Required Castles", 1, 20, "0", Order = 8, RequireRestart = false, HintText = "Number of castles you must hold to complete King quest.")]
         [SettingPropertyGroup("Quest Difficulty")]
         public int SovereignRequiredCastles { get; set; } = 5;
 

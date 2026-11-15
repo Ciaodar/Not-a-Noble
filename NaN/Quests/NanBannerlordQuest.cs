@@ -15,7 +15,7 @@ namespace NaN.Quests
         [SaveableField(3)]
         private JournalLog _lordTaskLog;
 
-        public override TextObject Title => new TextObject("{=nan_bannerlord_title}Path to a Bannerman");
+        public override TextObject Title => new TextObject("{=nan_bannerlord_title}Path to a Vassal");
 
         public NanBannerlordQuest() : base("nan_bannerlord_quest", null, CampaignTime.Never, 0)
         {
@@ -28,7 +28,7 @@ namespace NaN.Quests
         protected override void OnStartQuest()
         {
             int requiredPersuasions = NaN.Config.NanSettingsManager.BannerlordRequiredPersuasions;
-            var log = new TextObject("{=nan_bannerlord_init_log}To ascend to nobility as a Bannerman, you must persuade {REQUIRED_PERSUASIONS} different lords to recognize you as a noble.");
+            var log = new TextObject("{=nan_bannerlord_init_log}To ascend to nobility as a Vassal, you must persuade {REQUIRED_PERSUASIONS} different lords to recognize you as a noble.");
             log.SetTextVariable("REQUIRED_PERSUASIONS", requiredPersuasions);
             
             var taskName = new TextObject("{=nan_bannerlord_task}Persuaded Lords");

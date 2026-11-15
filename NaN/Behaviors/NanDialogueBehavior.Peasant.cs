@@ -25,7 +25,7 @@ namespace NaN.Behaviors
 
             // 4. First Introduction Replacement ("Its an honor to meet you good sir.")
             starter.AddDialogLine("nan_peasant_intro", "lord_introduction", "lord_start", 
-                "{=nan_peasant_intro}My men also does not recognize you or your clans name. Which means that you are not even a Bannerman.", 
+                "{=nan_peasant_intro}My men also do not recognize you or your clan's name. Which means that you are not even a Vassal.", 
                 ConditionPeasantTier01, null, 150);
 
             // 5. Demands Replacement ("Eh? What do you want?")

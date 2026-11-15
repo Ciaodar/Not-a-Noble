@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.CharacterCreationContent;
 using TaleWorlds.Core;
 using NaN.Quests;
 
@@ -41,7 +42,8 @@ namespace NaN.Behaviors
 
         private void CheckTierAscension(Clan clan)
         {
-            if (clan.Tier >= 6) return;
+            if (clan == null || clan.Tier >= 6) return;
+            if (GameStateManager.Current?.ActiveState is CharacterCreationState) return;
 
             float renownThreshold = Campaign.Current.Models.ClanTierModel.GetRequiredRenownForTier(clan.Tier + 1);
             

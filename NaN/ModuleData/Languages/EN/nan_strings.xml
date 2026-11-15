@@ -4,15 +4,22 @@
     <tag language="English" />
   </tags>
   <strings>
-    <string id="nan_freebooter_title" text="Path to a Freebooter" />
-    <string id="nan_freebooter_init_log" text="To prove yourself as a Freebooter, you must complete the quests of 5 different villages and reach a total relation of {REQUIRED_RELATION}+ with the villagers." />
+    <string id="nan_tier_name_1" text="Mercenary" />
+    <string id="nan_tier_name_2" text="Vassal" />
+    <string id="nan_tier_name_3" text="Chieftain" />
+    <string id="nan_tier_name_4" text="Count" />
+    <string id="nan_tier_name_5" text="Duke" />
+    <string id="nan_tier_name_6" text="King" />
+
+    <string id="nan_freebooter_title" text="Path to a Mercenary" />
+    <string id="nan_freebooter_init_log" text="To prove yourself as a Mercenary, you must complete the quests of {REQUIRED_QUESTS} different villages and reach a total relation of {REQUIRED_RELATION}+ with the villagers." />
     <string id="nan_freebooter_task_villages" text="Completed Different Village Quests" />
     <string id="nan_freebooter_task_relation" text="Total Relation with Villagers" />
     <string id="nan_freebooter_log" text="You have completed a quest for {VILLAGE_NAME}. ({CURRENT}/5)" />
     <string id="nan_freebooter_relation_log" text="Your renown grows among the common folk. Total notable relation: {RELATION}/{REQUIRED}" />
 
-    <string id="nan_bannerlord_title" text="Path to a Bannerman" />
-    <string id="nan_bannerlord_init_log" text="To ascend to nobility as a Bannerman, you must persuade {REQUIRED_PERSUASIONS} different lords to recognize you as a noble." />
+    <string id="nan_bannerlord_title" text="Path to a Vassal" />
+    <string id="nan_bannerlord_init_log" text="To ascend to nobility as a Vassal, you must persuade {REQUIRED_PERSUASIONS} different lords to recognize you as a noble." />
     <string id="nan_bannerlord_task" text="Persuaded Lords" />
     <string id="nan_bannerlord_log" text="{LORD_NAME} has acknowledged your nobility. ({CURRENT}/{REQUIRED})" />
 
@@ -34,8 +41,8 @@
     <string id="nan_duke_task" text="Captured Sovereigns" />
     <string id="nan_duke_log" text="The sovereign {RULER_NAME} of {KINGDOM_NAME} now kneels before you. The realm trembles. ({CURRENT}/2)" />
 
-    <string id="nan_sovereign_title" text="Path to a Sovereign" />
-    <string id="nan_sovereign_init_log" text="To be crowned as the High Emperor (Sovereign) of Calradia, you must forge a kingdom holding at least {REQUIRED_TOWNS} great towns and {REQUIRED_CASTLES} castles." />
+    <string id="nan_sovereign_title" text="Path to a King" />
+    <string id="nan_sovereign_init_log" text="To be crowned as a King of Calradia, you must forge a kingdom holding at least {REQUIRED_TOWNS} great towns and {REQUIRED_CASTLES} castles." />
     <string id="nan_sovereign_task_town" text="Owned Towns" />
     <string id="nan_sovereign_task_castle" text="Owned Castles" />
     <string id="nan_sovereign_log" text="From peasant to Emperor, you have forged a mighty kingdom with {REQUIRED_TOWNS} great towns and {REQUIRED_CASTLES} unyielding castles. All of Calradia will know your name!" />
@@ -75,7 +82,7 @@
     <string id="nan_peasant_greeting" text="Why are you taking my precious time, peasant?! I hope its important." />
     <string id="nan_peasant_reject_diplomacy" text="There's no way, I'm planning to discuss something with a filthy peasant. Know your place!" />
     <string id="nan_peasant_reject_issue" text="I have no intention of giving this task to a peasant of unknown origin." />
-    <string id="nan_peasant_intro" text="My men also does not recognize you or your clans name. Which means that you are not even a Bannerman." />
+    <string id="nan_peasant_intro" text="My men also do not recognize you or your clan's name. Which means that you are not even a Vassal." />
     <string id="nan_peasant_demand" text="Demands...? Are you okay? You must've hit your head somewhere. A peasant demands something from me, eh?" />
     <string id="nan_peasant_pretalk" text="I hope thats all. I'm not willing to spend one more second with a peasant after all!" />
     <string id="nan_peasant_leave" text="Yes, off with you. Frankly, you should have vanished from my sight long before this." />

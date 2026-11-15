@@ -4,38 +4,45 @@
     <tag language="Türkçe" />
   </tags>
   <strings>
-    <string id="nan_freebooter_title" text="Freebooter Yolu" />
-    <string id="nan_freebooter_init_log" text="Bir Freebooter olduğunu kanıtlamak için 5 farklı köyün görevini tamamlamalı ve köylülerle toplamda 30+ ilişki seviyesine ulaşmalısın." />
+    <string id="nan_tier_name_1" text="Paralı Asker" />
+    <string id="nan_tier_name_2" text="Vasal" />
+    <string id="nan_tier_name_3" text="Klan Reisi" />
+    <string id="nan_tier_name_4" text="Kont" />
+    <string id="nan_tier_name_5" text="Dük" />
+    <string id="nan_tier_name_6" text="Kral" />
+
+    <string id="nan_freebooter_title" text="Paralı Asker Yolu" />
+    <string id="nan_freebooter_init_log" text="Bir Paralı Asker olduğunu kanıtlamak için {REQUIRED_QUESTS} farklı köyün görevini tamamlamalı ve köylülerle toplamda {REQUIRED_RELATION}+ ilişki seviyesine ulaşmalısın." />
     <string id="nan_freebooter_task_villages" text="Tamamlanan Farklı Köy Görevleri" />
     <string id="nan_freebooter_task_relation" text="Köylülerle Toplam İlişki (Relation)" />
     <string id="nan_freebooter_log" text="{VILLAGE_NAME} için bir görevi tamamladın. ({CURRENT}/5)" />
     <string id="nan_freebooter_relation_log" text="Halk arasındaki namın yayılıyor. Eşrafla olan toplam ilişkin: {RELATION}/30" />
 
-    <string id="nan_bannerlord_title" text="Bannerman Yolu" />
-    <string id="nan_bannerlord_init_log" text="Bir Bannerman olarak asalete adım atmak için {REQUIRED_PERSUASIONS} farklı lordu seni soylu olarak kabul etmeye ikna etmelisin." />
+    <string id="nan_bannerlord_title" text="Vasal Yolu" />
+    <string id="nan_bannerlord_init_log" text="Bir Vasal olarak asalete adım atmak için {REQUIRED_PERSUASIONS} farklı lordu seni soylu olarak kabul etmeye ikna etmelisin." />
     <string id="nan_bannerlord_task" text="İkna Edilen Lordlar" />
     <string id="nan_bannerlord_log" text="{LORD_NAME} senin asaletini tanıdı. ({CURRENT}/{REQUIRED})" />
 
-    <string id="nan_chieftain_title" text="Chieftain Yolu" />
+    <string id="nan_chieftain_title" text="Klan Reisi Yolu" />
     <string id="nan_chieftain_init_log" text="Savaş meydanlarında {REQUIRED_CAPTURES} farklı lordu mağlup edip esir almalısın. Ayrıca asaletini tanıması karşılığında {REQUIRED_RELEASES} yüksek rütbeli lordu serbest bırakmalısın." />
     <string id="nan_chieftain_task_capture" text="Esir Alınan Lordlar" />
     <string id="nan_chieftain_task_release" text="Serbest Bırakılan Asiller" />
     <string id="nan_chieftain_capture_log" text="{LORD_NAME} adındaki asili yenip esir aldın. ({CURRENT}/{REQUIRED})" />
     <string id="nan_chieftain_release_log" text="Bir soyluyu asaletini tanıması karşılığında serbest bıraktın. Puan: {CURRENT}/{TARGET}" />
 
-    <string id="nan_count_title" text="Count Yolu" />
-    <string id="nan_count_init_log" text="Kendini bir Count olarak kanıtlamak için ya bir kaleyi fethetmeli ya da kendi kaleni bir kuşatmaya karşı başarıyla savunmalısın." />
+    <string id="nan_count_title" text="Kont Yolu" />
+    <string id="nan_count_init_log" text="Kendini bir Kont olarak kanıtlamak için ya bir kaleyi fethetmeli ya da kendi kaleni bir kuşatmaya karşı başarıyla savunmalısın." />
     <string id="nan_count_task" text="Fethedilen veya Savunulan Kale" />
     <string id="nan_count_capture_log" text="Fethettiğin bir kaleye sancağını çektin. Gücün inkar edilemez." />
     <string id="nan_count_defend_log" text="Kale surları komutanlığında ayakta kaldı. Kendini yetenekli bir savunucu olarak kanıtladın." />
 
-    <string id="nan_duke_title" text="Duke Yolu" />
-    <string id="nan_duke_init_log" text="Kudretini bir Duke olarak diyarın dört bir yanına duyurmak için 2 farklı krallığın hükümdarını (Sovereign) savaşta esir almalısın." />
+    <string id="nan_duke_title" text="Dük Yolu" />
+    <string id="nan_duke_init_log" text="Kudretini bir Dük olarak diyarın dört bir yanına duyurmak için 2 farklı krallığın hükümdarını (Kral) savaşta esir almalısın." />
     <string id="nan_duke_task" text="Esir Alınan Hükümdarlar" />
     <string id="nan_duke_log" text="{KINGDOM_NAME} hükümdarı {RULER_NAME} önünde diz çöküyor. Diyar titriyor. ({CURRENT}/2)" />
 
-    <string id="nan_sovereign_title" text="Sovereign Yolu" />
-    <string id="nan_sovereign_init_log" text="Kalradya'nın Yüce İmparatoru (Sovereign) olarak taç giymek için en az 3 büyük şehir ve 5 kaleyi elinde bulunduran bir krallık kurmalısın." />
+    <string id="nan_sovereign_title" text="Kral Yolu" />
+    <string id="nan_sovereign_init_log" text="Kalradya'da Kral olarak taç giymek için en az {REQUIRED_TOWNS} büyük şehir ve {REQUIRED_CASTLES} kaleyi elinde bulunduran bir krallık kurmalısın." />
     <string id="nan_sovereign_task_town" text="Sahip Olunan Şehirler" />
     <string id="nan_sovereign_task_castle" text="Sahip Olunan Kaleler" />
     <string id="nan_sovereign_log" text="Basit bir köylüden bir İmparatora! 3 büyük şehir ve 5 yıkılmaz kale ile kudretli bir krallık kurdun. Bütün Kalradya adını bilecek!" />
@@ -63,11 +70,11 @@
     <string id="nan_bannerlord_continue" text="Devam et." />
     <string id="nan_bannerlord_round_continue" text="Devam et, henüz emin olamadım." />
 
-    <string id="nan_chieftain_offer" text="Seni bir şartla salıvereceğim, Beni ve klanımı Chieftain olarak kabul et ve özgürlüğüne kavuş." />
+    <string id="nan_chieftain_offer" text="Seni bir şartla salıvereceğim. Beni ve klanımı Klan Reisi olarak kabul et ve özgürlüğüne kavuş." />
     <string id="nan_chieftain_accept" text="En azından alt sınıf biri tarafından esir alınmamış olacağım. Kabul ediyorum." />
     <string id="nan_chieftain_accept_player" text="Klanına haber gönder. Beni tanıdıklarını ilan ettiklerinde salınacaksın." />
     <string id="nan_chieftain_accept_end" text="Merhametinizdeyim, {?PLAYER.GENDER}leydim{?}lordum{\?}!" />
-    <string id="nan_chieftain_refuse" text="Sen bir Chieftain olamadan geberip gideceksin. Eninde sonunda kelleni elime alacağım. Kaybol, alt sınıf pislik!" />
+    <string id="nan_chieftain_refuse" text="Sen bir Klan Reisi olamadan geberip gideceksin. Eninde sonunda kelleni elime alacağım. Kaybol, alt sınıf pislik!" />
     <string id="nan_chieftain_refuse_player" text="Merhametimde bulunduğunu hatırlatırım. klanına söyle fidyeyi cömertçe hazırlasınlar." />
     <string id="nan_chieftain_refuse_end" text="Seni öldüreceğim, öleceksin!" />
 
@@ -75,7 +82,7 @@
     <string id="nan_peasant_greeting" text="Neden vaktimi çalıyorsun, köylü?! Umarım önemli bir şeydir." />
     <string id="nan_peasant_reject_diplomacy" text="Senin gibi sefil bir köylüyle tartışacak hiçbir meselem olamaz. Haddini bil!" />
     <string id="nan_peasant_reject_issue" text="Sana görev falan verecek değilim, nereden geldiği belli olmayan bir köylüsün." />
-    <string id="nan_peasant_intro" text="Adamlarım seni ya da klanını tanımıyor. Görünüşe bakılırsa daha Bannerman bile olamamışsın." />
+    <string id="nan_peasant_intro" text="Adamlarım seni ya da klanını tanımıyor. Görünüşe bakılırsa daha Vasal bile olamamışsın." />
     <string id="nan_peasant_demand" text="Talep mi...? Kafana bir darbe falan mı aldın? Bir köylü benden bir şey talep edecek, öyle mi?" />
     <string id="nan_peasant_pretalk" text="Umarım söyleyeceklerin bitmiştir. Zira senin gibi bir köylüyle bir saniye daha harcamak istemiyorum!" />
     <string id="nan_peasant_leave" text="Evet, çekil git. Açıkçası, çoktan gözümün önünden kaybolmalıydın." />

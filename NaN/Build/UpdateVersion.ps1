@@ -24,16 +24,16 @@ if ($versionLine) {
         $major++
         $update = 0
         $hotfix = 0
-        $debug = 0
+        $debug++
     }
     elseif ($Configuration -eq "Update") {
         $update++
         $hotfix = 0
-        $debug = 0
+        $debug++
     }
     elseif ($Configuration -eq "Hotfix") {
         $hotfix++
-        $debug = 0
+        $debug++
     }
     else {
         # Debug configuration

@@ -1,6 +1,8 @@
 using HarmonyLib;
 using NaN.Config;
 using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.CampaignBehaviors;
+using TaleWorlds.CampaignSystem.CharacterCreationContent;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 
@@ -15,6 +17,7 @@ namespace NaN.Patches
         public static bool Prefix(Clan __instance, ref float value, bool shouldNotify)
         {
             if (!NanSettingsManager.IsModEnabled || BypassCap) return true;
+            if (GameStateManager.Current?.ActiveState is CharacterCreationState) return true;
 
             // Definitive Cheat Detection:
             // Vanilla Bannerlord never awards massive amounts of renown in a single action.
@@ -40,7 +43,7 @@ namespace NaN.Patches
                             value = 0f;
 
                             var message = new TaleWorlds.Localization.TextObject("{=nan_renown_locked}You cannot gain more renown! Check the Quests tab to see how to ascend to {TIER_NAME}.");
-                            message.SetTextVariable("TIER_NAME", nextTier.ToString());
+                            message.SetTextVariable("TIER_NAME", GetTierName(nextTier));
                             
                             // Top-middle toast notification
                             TaleWorlds.Core.MBInformationManager.AddQuickInformation(message);
@@ -59,6 +62,34 @@ namespace NaN.Patches
             }
 
             return true;
+        }
+
+        private static TaleWorlds.Localization.TextObject GetTierName(int tier)
+        {
+            switch (tier)
+            {
+                case 1: return new TaleWorlds.Localization.TextObject("{=nan_tier_name_1}Mercenary");
+                case 2: return new TaleWorlds.Localization.TextObject("{=nan_tier_name_2}Vassal");
+                case 3: return new TaleWorlds.Localization.TextObject("{=nan_tier_name_3}Chieftain");
+                case 4: return new TaleWorlds.Localization.TextObject("{=nan_tier_name_4}Count");
+                case 5: return new TaleWorlds.Localization.TextObject("{=nan_tier_name_5}Duke");
+                case 6: return new TaleWorlds.Localization.TextObject("{=nan_tier_name_6}King");
+                default: return new TaleWorlds.Localization.TextObject(tier.ToString());
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(CampaignAdvancedStartingPlayerOptionsCampaignBehavior), "EnsureMinimumClanTier")]
+    public static class AdvancedStartingOptionsEnsureTierPatch
+    {
+        public static void Prefix()
+        {
+            ClanAddRenownPatch.BypassCap = true;
+        }
+
+        public static void Finalizer()
+        {
+            ClanAddRenownPatch.BypassCap = false;
         }
     }
 }

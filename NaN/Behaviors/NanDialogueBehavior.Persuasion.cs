@@ -101,6 +101,7 @@ namespace NaN.Behaviors
             var quest = GetActiveBannerlordQuest();
             if (quest == null || Hero.OneToOneConversationHero == null || !Hero.OneToOneConversationHero.IsLord || Hero.OneToOneConversationHero.Clan == Clan.PlayerClan) return false;
             if (Hero.OneToOneConversationHero.IsPrisoner || Hero.MainHero.IsPrisoner) return false;
+            if (Hero.OneToOneConversationHero.Clan != null && Hero.OneToOneConversationHero.Clan.HasBloodFeudWithPlayer) return false;
             if (Hero.OneToOneConversationHero.MapFaction != null && Hero.MainHero.MapFaction != null &&
                 Hero.OneToOneConversationHero.MapFaction.IsAtWarWith(Hero.MainHero.MapFaction)) return false;
 

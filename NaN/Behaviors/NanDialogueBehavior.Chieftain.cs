@@ -96,6 +96,7 @@ namespace NaN.Behaviors
             if (quest.HasFailedPersuasion(lord)) return false;
             if (!lord.IsPrisoner || lord.PartyBelongedToAsPrisoner != PartyBase.MainParty) return false;
             if (lord.Clan == null || lord.Clan.Tier < 4) return false;
+            if (lord.Clan.HasBloodFeudWithPlayer) return false;
 
             return true;
         }

@@ -17,7 +17,7 @@ namespace NaN.Quests
         [SaveableField(3)]
         private JournalLog _relationTaskLog;
 
-        public override TextObject Title => new TextObject("{=nan_freebooter_title}Path to a Freebooter");
+        public override TextObject Title => new TextObject("{=nan_freebooter_title}Path to a Mercenary");
 
         public NanFreebooterQuest() : base("nan_freebooter_quest", null, CampaignTime.Never, 0)
         {
@@ -29,7 +29,7 @@ namespace NaN.Quests
         protected override void OnStartQuest()
         {
             int requiredQuests = NaN.Config.NanSettingsManager.FreebooterRequiredQuests;
-            var log = new TextObject("{=nan_freebooter_init_log}To prove yourself as a Freebooter, you must complete the quests of {REQUIRED_QUESTS} different villages and reach a total relation of {REQUIRED_RELATION}+ with the villagers.");
+            var log = new TextObject("{=nan_freebooter_init_log}To prove yourself as a Mercenary, you must complete the quests of {REQUIRED_QUESTS} different villages and reach a total relation of {REQUIRED_RELATION}+ with the villagers.");
             log.SetTextVariable("REQUIRED_QUESTS", requiredQuests);
             log.SetTextVariable("REQUIRED_RELATION", NaN.Config.NanSettingsManager.FreebooterRequiredRelation);
             

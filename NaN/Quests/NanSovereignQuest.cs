@@ -14,7 +14,7 @@ namespace NaN.Quests
         [SaveableField(2)]
         private JournalLog _castleTaskLog;
 
-        public override TextObject Title => new TextObject("{=nan_sovereign_title}Path to a Sovereign");
+        public override TextObject Title => new TextObject("{=nan_sovereign_title}Path to a King");
 
         public NanSovereignQuest() : base("nan_sovereign_quest", null, CampaignTime.Never, 0)
         {
@@ -27,7 +27,7 @@ namespace NaN.Quests
             int reqTowns = NaN.Config.NanSettingsManager.SovereignRequiredTowns;
             int reqCastles = NaN.Config.NanSettingsManager.SovereignRequiredCastles;
 
-            var log = new TextObject("{=nan_sovereign_init_log}To be crowned as the High Emperor (Sovereign) of Calradia, you must forge a kingdom holding at least {REQUIRED_TOWNS} great towns and {REQUIRED_CASTLES} castles.");
+            var log = new TextObject("{=nan_sovereign_init_log}To be crowned as a King of Calradia, you must forge a kingdom holding at least {REQUIRED_TOWNS} great towns and {REQUIRED_CASTLES} castles.");
             log.SetTextVariable("REQUIRED_TOWNS", reqTowns);
             log.SetTextVariable("REQUIRED_CASTLES", reqCastles);
             
