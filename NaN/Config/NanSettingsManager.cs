@@ -28,28 +28,25 @@ namespace NaN.Config
 
         public static void Initialize()
         {
-            LoadJsonSettings();
+            Reload();
         }
 
         public static void RegisterExternalSettingsProvider(Func<NanJsonModel> provider)
         {
-            _externalProvider = provider;
+            lock (SyncRoot)
+            {
+                _externalProvider = provider;
+                Reload();
+            }
         }
 
         private static NanJsonModel SettingsOrDefault()
         {
-            if (_externalProvider != null)
-            {
-                var externalSettings = _externalProvider();
-                if (externalSettings != null)
-                    return externalSettings;
-            }
-
             lock (SyncRoot)
             {
                 if (_settings == null)
                 {
-                    LoadJsonSettings();
+                    Reload();
                 }
                 return _settings ?? new NanJsonModel();
             }
@@ -59,6 +56,23 @@ namespace NaN.Config
         {
             lock (SyncRoot)
             {
+                if (_externalProvider != null)
+                {
+                    try
+                    {
+                        var externalSettings = _externalProvider();
+                        if (externalSettings != null)
+                        {
+                            _settings = externalSettings;
+                            return;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.Print("[NaN] Error reloading external settings: " + ex.Message);
+                    }
+                }
+
                 LoadJsonSettings();
             }
         }
