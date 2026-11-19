@@ -14,6 +14,9 @@ namespace NaN
     public class NaNSubModule : MBSubModuleBase
     {
         private bool _isLoaded = false;
+        private static bool _mcmResolverRegistered;
+        private static bool _mcmLoadHookRegistered;
+        private static bool _isActivatingMcmBridge;
 
         protected override void OnSubModuleLoad()
         {
@@ -61,11 +64,93 @@ namespace NaN
             }
         }
 
-        private static void TryActivateOptionalMcmBridge()
+        private static Assembly FindLoadedAssembly(string shortName)
+        {
+            return AppDomain.CurrentDomain.GetAssemblies()
+                .FirstOrDefault(a => string.Equals(a.GetName().Name, shortName, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private static void EnsureMcmAssemblyResolver()
+        {
+            if (_mcmResolverRegistered)
+                return;
+
+            AppDomain.CurrentDomain.AssemblyResolve += OnMcmAssemblyResolve;
+            _mcmResolverRegistered = true;
+        }
+
+        private static Assembly OnMcmAssemblyResolve(object sender, ResolveEventArgs args)
         {
             try
             {
-                Assembly.Load("MCMv5");
+                if (args == null || string.IsNullOrWhiteSpace(args.Name))
+                    return null;
+
+                string requestedName = new AssemblyName(args.Name).Name;
+                if (string.Equals(requestedName, "MCMv5", StringComparison.OrdinalIgnoreCase))
+                    return FindLoadedAssembly("MCMv5");
+            }
+            catch
+            {
+            }
+
+            return null;
+        }
+
+        private static void EnsureMcmAssemblyLoadHook()
+        {
+            if (_mcmLoadHookRegistered)
+                return;
+
+            AppDomain.CurrentDomain.AssemblyLoad += OnMcmAssemblyLoaded;
+            _mcmLoadHookRegistered = true;
+        }
+
+        private static void OnMcmAssemblyLoaded(object sender, AssemblyLoadEventArgs args)
+        {
+            try
+            {
+                if (args?.LoadedAssembly == null)
+                    return;
+
+                if (string.Equals(args.LoadedAssembly.GetName().Name, "MCMv5", StringComparison.OrdinalIgnoreCase))
+                {
+                    AppDomain.CurrentDomain.AssemblyLoad -= OnMcmAssemblyLoaded;
+                    _mcmLoadHookRegistered = false;
+                    TryActivateOptionalMcmBridge();
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private static void TryActivateOptionalMcmBridge()
+        {
+            if (_isActivatingMcmBridge)
+                return;
+
+            _isActivatingMcmBridge = true;
+            try
+            {
+                Assembly mcmAssembly = FindLoadedAssembly("MCMv5");
+                if (mcmAssembly == null)
+                {
+                    EnsureMcmAssemblyLoadHook();
+                    try
+                    {
+                        mcmAssembly = Assembly.Load("MCMv5");
+                    }
+                    catch
+                    {
+                        return;
+                    }
+                }
+
+                if (mcmAssembly == null)
+                    return;
+
+                EnsureMcmAssemblyResolver();
 
                 string assemblyLocation = typeof(NaNSubModule).Assembly.Location;
                 if (string.IsNullOrWhiteSpace(assemblyLocation))
@@ -79,9 +164,7 @@ namespace NaN
                 if (!File.Exists(bridgePath))
                     return;
 
-                Assembly bridgeAssembly = AppDomain.CurrentDomain.GetAssemblies()
-                    .FirstOrDefault(a => string.Equals(a.GetName().Name, "NaN.MCMBridge", StringComparison.OrdinalIgnoreCase))
-                    ?? Assembly.LoadFrom(bridgePath);
+                Assembly bridgeAssembly = FindLoadedAssembly("NaN.MCMBridge") ?? Assembly.LoadFrom(bridgePath);
 
                 Type bootstrapType = bridgeAssembly.GetType("NaN.MCMBridge.BridgeBootstrap");
                 MethodInfo tryRegister = bootstrapType?.GetMethod("TryRegister", BindingFlags.Static | BindingFlags.Public);
@@ -90,6 +173,10 @@ namespace NaN
             catch (Exception ex)
             {
                 TaleWorlds.Library.Debug.Print("[NaN] MCM Bridge could not be loaded: " + ex.Message);
+            }
+            finally
+            {
+                _isActivatingMcmBridge = false;
             }
         }
     }
